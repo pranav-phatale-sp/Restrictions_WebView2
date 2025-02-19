@@ -1,0 +1,14 @@
+2025/02/18-11:42:09.428 a658 Reusing MANIFEST C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\IndexedDB\https_www.bbc.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/18-11:42:09.430 a658 Recovering log #4
+2025/02/18-11:42:09.433 a658 Reusing old log C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\IndexedDB\https_www.bbc.com_0.indexeddb.leveldb/000004.log 
+2025/02/18-11:42:11.934 a658 Level-0 table #8: started
+2025/02/18-11:42:11.945 a658 Level-0 table #8: 1748509 bytes OK
+2025/02/18-11:42:11.950 a658 Delete type=0 #4
+2025/02/18-11:42:11.953 a658 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/18-11:42:11.953 a658 Manual compaction at level-1 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x03\x02\x02\x01\x06\x00e\x00v\x00e\x00n\x00t\x00s' @ 1818 : 1
+2025/02/18-11:42:11.953 a658 Compacting 1@1 + 1@2 files
+2025/02/18-11:42:11.969 a658 Generated table #9@1: 34 keys, 59662 bytes
+2025/02/18-11:42:11.969 a658 Compacted 1@1 + 1@2 files => 59662 bytes
+2025/02/18-11:42:11.972 a658 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/02/18-11:42:11.973 a658 Delete type=2 #8
+2025/02/18-11:42:11.974 a658 Manual compaction at level-1 from '\x00\x03\x02\x02\x01\x06\x00e\x00v\x00e\x00n\x00t\x00s' @ 1818 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

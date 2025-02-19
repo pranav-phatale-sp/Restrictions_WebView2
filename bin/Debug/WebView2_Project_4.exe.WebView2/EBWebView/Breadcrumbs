@@ -1,0 +1,77 @@
+0:00:15 Tab1 PageLoad
+0:00:15 Tab1 FinishNav15
+0:00:15 Tab1 PageLoad
+0:00:16 Tab1 StartNav17 #renderer-script #auto_subframe
+0:00:16 Tab1 FinishNav17
+0:00:16 Tab1 PageLoad
+0:00:16 ClearBrowsingData_Downloads
+0:00:16 ClearBrowsingData_ShaderCache
+0:00:16 ClearBrowsingData_MaskContainsProtectedWeb
+0:00:16 ClearBrowsingData_SiteUsageData
+0:00:16 ClearBrowsingData_ContentLicenses
+0:00:16 Tab1 StartNav18 #renderer-script #auto_subframe
+0:00:16 Tab1 FinishNav18
+0:00:16 Tab1 PageLoad
+0:00:17 Tab1 StartNav19 #renderer-script #auto_subframe
+0:00:17 Tab1 FinishNav19
+0:00:17 Tab1 PageLoad
+0:00:18 Tab1 StartNav20 #renderer-user #auto_subframe
+0:00:18 Tab1 FinishNav20
+0:00:19 Tab1 StartNav21 #renderer-script #auto_subframe
+0:00:19 ClearBrowsingData_MaskContainsProtectedWeb
+0:00:19 Widget Closed: StatusBubble
+0:00:19 Tab1 FinishNav21
+0:00:19 Tab1 StartNav22 #renderer-script #auto_subframe
+0:00:20 Tab1 FinishNav22
+0:00:21 Tab1 PageLoad
+0:00:21 Tab1 PageLoad
+0:00:22 Tab1 StartNav23 #renderer-script #auto_subframe
+0:00:22 Tab1 FinishNav23
+0:00:22 Tab1 PageLoad
+0:00:28 Tab1 PageLoad
+0:01:02 Widget Closed: StatusBubble
+0:02:40 Widget Closed: StatusBubble
+0:04:40 Widget Closed: StatusBubble
+0:05:15 Tab1 StartNav24 #typed
+0:05:16 Tab1 FinishNav24
+0:05:17 Tab1 PageLoad
+0:05:17 Tab1 StartNav25 #renderer-script #auto_subframe
+0:05:17 Tab1 FinishNav25
+0:05:17 Tab1 PageLoad
+0:05:17 Tab1 StartNav26 #renderer-script #auto_subframe
+0:05:17 Tab1 FinishNav26
+0:05:17 Tab1 PageLoad
+0:05:17 Tab1 StartNav27 #renderer-script #auto_subframe
+0:05:17 Tab1 FinishNav27
+0:05:17 Tab1 PageLoad
+0:05:18 Tab1 StartNav28 #renderer-user #auto_subframe
+0:05:18 Tab1 StartNav29 #renderer-script #auto_subframe
+0:05:18 Tab1 FinishNav29
+0:05:18 Tab1 PageLoad
+0:05:18 Tab1 StartNav30 #renderer-user #auto_subframe
+0:05:18 Tab1 FinishNav28
+0:05:18 Tab1 PageLoad
+0:05:18 Tab1 StartNav31 #renderer-user #auto_subframe
+0:05:18 Tab1 StartNav32 #renderer-user #auto_subframe
+0:05:18 Tab1 StartNav33 #google #renderer-user #auto_subframe
+0:05:18 Tab1 FinishNav30
+0:05:18 Tab1 PageLoad
+0:05:19 Tab1 FinishNav31
+0:05:19 Tab1 PageLoad
+0:05:19 Tab1 FinishNav32
+0:05:19 Tab1 PageLoad
+0:05:19 Tab1 StartNav34 #renderer-script #auto_subframe
+0:05:19 Tab1 FinishNav34
+0:05:19 Tab1 PageLoad
+0:05:20 Tab1 FinishNav33
+0:05:20 Tab1 PageLoad #google
+0:05:20 Tab1 StartNav35 #renderer-script #auto_subframe
+0:05:20 Tab1 FinishNav35
+0:05:20 Tab1 PageLoad
+0:05:20 Tab1 StartNav36 #renderer-script #auto_subframe
+0:05:20 Tab1 FinishNav36
+0:05:20 Tab1 PageLoad
+0:05:20 Tab1 StartNav37 #renderer-script #auto_subframe
+0:05:20 Tab1 FinishNav37
+0:05:20 Tab1 PageLoad
+0:10:48 Media.Hidden
