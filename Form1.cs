@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
-//using Microsoft.Web.WebView2.Wpf;
-//using Microsoft.Web.WebView2.Wpf;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls.Crypto;
+using Google.Protobuf;
 
 
 namespace WebView2_Project_4
@@ -17,7 +22,63 @@ namespace WebView2_Project_4
             InitializeComponent();
             InitialiseWebView2();
             InitialiseForm();
-        }  
+        }
+
+
+        // Code for updating and getting language selected by user
+
+        static string connectionString = "Server=localhost;Database=pranav;User ID=root;Password=1234;";
+        static string GetCurrentLang()
+        {
+            string lang = string.Empty;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT lang FROM settings LIMIT 1";
+
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        var result = cmd.ExecuteScalar();
+                        lang = result.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+            return lang;
+        }
+        static void UpdateLang(string newLang)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "UPDATE settings SET lang = @newLang WHERE id = 1";
+
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@newLang", newLang);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+        // initialisation of form with combobox and some other settings
 
         private void InitialiseForm()
         {
@@ -26,6 +87,7 @@ namespace WebView2_Project_4
             this.comboBox1.Items.Add("Spanish");
             this.comboBox1.Items.Add("French");
             this.comboBox1.Items.Add("Arabic");
+            this.comboBox1.Items.Add("Marathi");
             this.comboBox1.SelectedIndexChanged += changeLanguage;
             this.MinimizeBox = false;
             this.WindowState = FormWindowState.Maximized;
@@ -33,76 +95,105 @@ namespace WebView2_Project_4
 
         }
 
+
+        // change language code, where we can upadte lang in DB also restart the application to reset environment
         private void changeLanguage(object sender, EventArgs e)
         {
-            
             if (comboBox1.SelectedItem.ToString() == "Hindi")
             {
-                webview.CoreWebView2.Navigate("https://www.bbc.com/hindi");
+
+                UpdateLang("hi-IN");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
             }
             else if (comboBox1.SelectedItem.ToString() == "English")
             {
-                webview.CoreWebView2.Navigate("https://www.bbc.com/");
+                UpdateLang("en-GB");
+                Application.Exit();
+                this.Close();
+                Application.Restart();  
+             
             }
-            else if(comboBox1.SelectedItem.ToString() == "Spanish")
+            else if (comboBox1.SelectedItem.ToString() == "Spanish")
             {
-                webview.CoreWebView2.Navigate("https://www.bbc.com/spanish");
+               
+                UpdateLang("es-ES");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
             }
             else if (comboBox1.SelectedItem.ToString() == "French")
-            {
-                webview.CoreWebView2.Navigate("https://www.bbc.com/afrique");
+            { 
+            
+                UpdateLang("fr-FR");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
             }
             else if (comboBox1.SelectedItem.ToString() == "Arabic")
             {
-                webview.CoreWebView2.Navigate("https://www.bbc.com/arabic");
+               
+                UpdateLang("ar-SA");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
             }
-        }
-
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            
-            if (this.WindowState != FormWindowState.Maximized)
+            else if (comboBox1.SelectedItem.ToString() == "Marathi")
             {
-                this.WindowState = FormWindowState.Maximized;
+
+                UpdateLang("mr-IN");
+                this.Close();
+                Application.Exit();
+                
+                Application.Restart();
             }
-        }
 
-        private void webView21_Click(object sender, EventArgs e)
-        {
 
         }
 
+        // initialising webview2 with lifecycles, setting env language and some restrictions 
         private async void InitialiseWebView2()
         {
 
             webview = new WebView2();
             webview.Dock = DockStyle.Fill;
             this.Controls.Add(webview);
-            await webview.EnsureCoreWebView2Async(null);
+
+            CoreWebView2EnvironmentOptions options = new CoreWebView2EnvironmentOptions(null);
+
+            string ss = GetCurrentLang();
+
+            options.Language = ss;
+
+            var env = await CoreWebView2Environment.CreateAsync(null, null, options);
+
+            await webview.EnsureCoreWebView2Async(env);
+
             webview.CoreWebView2.Settings.IsPinchZoomEnabled = false;
             webview.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             webview.CoreWebView2.Settings.AreDevToolsEnabled = false;
-            var cookieManager = webview.CoreWebView2.CookieManager;
-            cookieManager.DeleteAllCookies();
 
 
+            webview.CoreWebView2.Navigate("https://chatgpt.com/");
 
-
-            webview.CoreWebView2.Navigate("https://www.bbc.com/");
             webview.CoreWebView2.NavigationStarting += (sender, args) =>
             {
                 string getUri = "";
                 int cnt = 0;
 
-                for(int i = 0; i < args.Uri.Length; i++)
+                for (int i = 0; i < args.Uri.Length; i++)
                 {
                     if (args.Uri[i] == '/') cnt++;
                     getUri += args.Uri[i];
                     if (cnt == 3) break;
-                    
+
                 }
-               
-                if (getUri!= "https://www.bbc.com/")  
+
+                if (getUri != "https://chatgpt.com/")
                 {
                     args.Cancel = true;
                     MessageBox.Show("Navigation is restricted.");
@@ -113,10 +204,13 @@ namespace WebView2_Project_4
                     args.Cancel = true;
                     MessageBox.Show("Navigation is restricted");
                 }
+
+
+
             };
 
-
             webview.CoreWebView2.NavigationCompleted += webViewNavigationCompleted;
+
             webview.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
 
             webview.KeyDown += (sender, e) =>
@@ -128,17 +222,39 @@ namespace WebView2_Project_4
                      (e.KeyCode == Keys.F12) ||
                      (e.Control && e.KeyCode == Keys.C) ||
                      (e.Control && e.KeyCode == Keys.V) ||
-                     (e.Control && e.Shift && e.KeyCode == Keys.C) || 
+                     (e.Control && e.Shift && e.KeyCode == Keys.C) ||
                      (e.Alt) ||
                      (e.Control) || (e.Shift)
                  )
                 {
-                    e.SuppressKeyPress = true; 
+                    e.SuppressKeyPress = true;
                     MessageBox.Show("This action is disabled!");
                 }
             };
 
 
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void CoreWebView2_WebResourceRequested(object sender, CoreWebView2WebResourceRequestedEventArgs e)
+        {
+            string selectedLanguage = Lang.currentlang;
+            selectedLanguage = "hi-IN";
+            MessageBox.Show("hii");
+
+            var requestHeaders = e.Request.Headers;
+            requestHeaders.SetHeader("Accept-Language", selectedLanguage);
+
+            // Optionally, you can print the modified headers for debugging
+            Console.WriteLine($"New Accept-Language Header: {selectedLanguage}");
         }
 
         private void CoreWebView2_NewWindowRequested(object sender,CoreWebView2NewWindowRequestedEventArgs e)
@@ -147,30 +263,11 @@ namespace WebView2_Project_4
             e.Handled = true;
         }
 
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-        //    MessageBox.Show("Key Pressed: " + keyData.ToString());
-
-        //    if ((keyData == (Keys.Control | Keys.P)) ||  
-        //        (keyData == (Keys.Control | Keys.S)) ||  
-        //        (keyData == (Keys.Control | Keys.U)) ||  
-        //        (keyData == (Keys.Control | Keys.J)) ||  
-        //        (keyData == (Keys.Control | Keys.Shift | Keys.C)) ||  
-        //        (keyData == Keys.F12) ||  
-        //        (keyData == (Keys.Control | Keys.C)) ||  
-        //        (keyData == (Keys.Control | Keys.V)) ||  
-        //        (keyData == (Keys.Control | Keys.R)) ||  
-        //        (keyData == Keys.Alt))  
-        //    {
-        //        MessageBox.Show("This action is disabled!");
-        //        return true; 
-        //    }
-
-        //    return base.ProcessCmdKey(ref msg, keyData);
-        //}
 
         private async void webViewNavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
+
+
 
             //await disablePrint();
             //await disableInspect();
@@ -182,6 +279,8 @@ namespace WebView2_Project_4
             //await disableHtmlPage();
             //await disableAltKey();
 
+
+
             await webview.CoreWebView2.ExecuteScriptAsync(@"
                 window.print = function() {
                     console.log('Print is disabled.');
@@ -190,18 +289,16 @@ namespace WebView2_Project_4
 
         }
 
+        private void webView21_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        // js code ->
         private async Task disablePrint()
         {
-            await webview.CoreWebView2.ExecuteScriptAsync(@"
-                document.addEventListener('keydown', function (event) {
-                    if (event.ctrlKey && event.key.toLowerCase() === 'p') {
-                        event.preventDefault();
-                        alert('Printing is disabled!');
-                    }
-                });
-
-                window.print = function() { alert('Printing is disabled!'); };
-            ");
+           
         }
 
         private async Task disableInspect()
@@ -300,6 +397,11 @@ namespace WebView2_Project_4
                     }
                 });
             ");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
