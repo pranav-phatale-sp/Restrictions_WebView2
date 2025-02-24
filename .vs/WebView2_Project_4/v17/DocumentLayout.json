@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|c:\\users\\pranav.phatale\\source\\repos\\webview2_project_4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|c:\\users\\pranav.phatale\\source\\repos\\webview2_project_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2AC2D8E-6EBC-4FDA-B5E1-E5E3C8665AD8}|WebView2_Project_4.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -71,7 +71,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAkwKcAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAABBwGoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T07:26:44.847Z",
               "IsPinned": true,
@@ -80,10 +80,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1448304955:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -95,8 +91,23 @@
               "RelativeToolTip": "selectLang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T17:54:20.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T17:54:20.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-19T07:04:03.628Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -106,10 +117,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T07:36:04.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T07:36:04.623Z"
             },
             {
               "$type": "Document",
@@ -161,18 +171,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-19T07:04:03.628Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
               "Title": "WebView2_Project_4",
               "DocumentMoniker": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\WebView2_Project_4.csproj",
@@ -202,8 +200,7 @@
               "ToolTip": "C:\\Users\\pranav.phatale\\source\\repos\\WebView2_Project_4\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T07:24:49.669Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-02-10T07:24:49.669Z"
             },
             {
               "$type": "Document",
@@ -227,8 +224,7 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T06:48:29.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T06:48:29.45Z"
             }
           ]
         }

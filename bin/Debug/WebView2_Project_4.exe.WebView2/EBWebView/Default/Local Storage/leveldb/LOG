@@ -1,19 +1,10 @@
-2025/02/21-11:14:46.911 6b48 Reusing MANIFEST C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2025/02/21-11:14:46.928 6b48 Recovering log #320
-2025/02/21-11:14:46.928 6b48 Level-0 table #322: started
-2025/02/21-11:14:46.950 6b48 Level-0 table #322: 27941 bytes OK
-2025/02/21-11:14:46.954 6b48 Recovering log #321
-2025/02/21-11:14:46.965 6b48 Reusing old log C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000321.log 
-2025/02/21-11:14:46.969 6b48 Delete type=0 #320
-2025/02/21-11:14:46.971 5718 Compacting 4@0 + 1@1 files
-2025/02/21-11:14:47.028 5718 Generated table #323@0: 140 keys, 676649 bytes
-2025/02/21-11:14:47.029 5718 Compacted 4@0 + 1@1 files => 676649 bytes
-2025/02/21-11:14:47.029 5718 compacted to: files[ 0 1 0 0 0 0 0 ]
-2025/02/21-11:14:47.032 5718 Delete type=2 #313
-2025/02/21-11:14:47.032 5718 Delete type=2 #315
-2025/02/21-11:14:47.032 5718 Delete type=2 #317
-2025/02/21-11:14:47.032 5718 Delete type=2 #319
-2025/02/21-11:14:47.032 5718 Delete type=2 #322
-2025/02/21-11:15:54.254 5718 Level-0 table #325: started
-2025/02/21-11:15:54.286 5718 Level-0 table #325: 27981 bytes OK
-2025/02/21-11:15:54.291 5718 Delete type=0 #321
+2025/02/24-16:03:55.598 7e80 Reusing MANIFEST C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2025/02/24-16:03:55.613 7e80 Recovering log #430
+2025/02/24-16:03:55.613 7e80 Level-0 table #433: started
+2025/02/24-16:03:55.631 7e80 Level-0 table #433: 27943 bytes OK
+2025/02/24-16:03:55.635 7e80 Recovering log #432
+2025/02/24-16:03:55.643 7e80 Reusing old log C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000432.log 
+2025/02/24-16:03:55.647 7e80 Delete type=0 #430
+2025/02/24-16:05:03.572 4384 Level-0 table #435: started
+2025/02/24-16:05:03.599 4384 Level-0 table #435: 28025 bytes OK
+2025/02/24-16:05:03.602 4384 Delete type=0 #432

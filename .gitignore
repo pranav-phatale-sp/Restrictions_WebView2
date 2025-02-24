@@ -1,9 +1,24 @@
-
-.vs/
-.vscode/
+﻿# Ignore build directories
 bin/
 obj/
+
+# Ignore NuGet packages folder
+packages/
+
+# Ignore Visual Studio specific files
+.vs/
+.vscode/
+
+# User-specific files
 *.user
-*.suo
 *.userosscache
-*.sln.docstates
+*.suo
+*.userprefs
+
+# Ignore generated files like logs
+*.log
+
+# Ignore Windows installer files
+*.cab
+*.msi
+

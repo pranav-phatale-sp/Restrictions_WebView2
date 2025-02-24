@@ -10,6 +10,9 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Tls.Crypto;
 using Google.Protobuf;
+using System.Globalization;
+using System.Threading;
+
 
 
 namespace WebView2_Project_4
@@ -24,9 +27,7 @@ namespace WebView2_Project_4
             InitialiseForm();
         }
 
-
-        // Code for updating and getting language selected by user
-
+        
         static string connectionString = "Server=localhost;Database=pranav;User ID=root;Password=1234;";
         static string GetCurrentLang()
         {
@@ -77,17 +78,14 @@ namespace WebView2_Project_4
             }
         }
 
-
-        // initialisation of form with combobox and some other settings
-
         private void InitialiseForm()
         {
-            this.comboBox1.Items.Add("Hindi");
-            this.comboBox1.Items.Add("English");
-            this.comboBox1.Items.Add("Spanish");
-            this.comboBox1.Items.Add("French");
-            this.comboBox1.Items.Add("Arabic");
-            this.comboBox1.Items.Add("Marathi");
+            this.comboBox1.Items.Add("hi-IN");
+            this.comboBox1.Items.Add("en-GB");
+            this.comboBox1.Items.Add("es-ES");
+            this.comboBox1.Items.Add("fr-FR");
+            this.comboBox1.Items.Add("ar-SA");
+            this.comboBox1.Items.Add("mr-IN");
             this.comboBox1.SelectedIndexChanged += changeLanguage;
             this.MinimizeBox = false;
             this.WindowState = FormWindowState.Maximized;
@@ -95,67 +93,6 @@ namespace WebView2_Project_4
 
         }
 
-
-        // change language code, where we can upadte lang in DB also restart the application to reset environment
-        private void changeLanguage(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem.ToString() == "Hindi")
-            {
-
-                UpdateLang("hi-IN");
-                Application.Exit();
-                this.Close();
-                Application.Restart();
-
-            }
-            else if (comboBox1.SelectedItem.ToString() == "English")
-            {
-                UpdateLang("en-GB");
-                Application.Exit();
-                this.Close();
-                Application.Restart();  
-             
-            }
-            else if (comboBox1.SelectedItem.ToString() == "Spanish")
-            {
-               
-                UpdateLang("es-ES");
-                Application.Exit();
-                this.Close();
-                Application.Restart();
-
-            }
-            else if (comboBox1.SelectedItem.ToString() == "French")
-            { 
-            
-                UpdateLang("fr-FR");
-                Application.Exit();
-                this.Close();
-                Application.Restart();
-
-            }
-            else if (comboBox1.SelectedItem.ToString() == "Arabic")
-            {
-               
-                UpdateLang("ar-SA");
-                Application.Exit();
-                this.Close();
-                Application.Restart();
-            }
-            else if (comboBox1.SelectedItem.ToString() == "Marathi")
-            {
-
-                UpdateLang("mr-IN");
-                this.Close();
-                Application.Exit();
-                
-                Application.Restart();
-            }
-
-
-        }
-
-        // initialising webview2 with lifecycles, setting env language and some restrictions 
         private async void InitialiseWebView2()
         {
 
@@ -166,6 +103,11 @@ namespace WebView2_Project_4
             CoreWebView2EnvironmentOptions options = new CoreWebView2EnvironmentOptions(null);
 
             string ss = GetCurrentLang();
+
+           
+            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+            string language = currentCulture.TwoLetterISOLanguageName;
+
 
             options.Language = ss;
 
@@ -235,6 +177,76 @@ namespace WebView2_Project_4
 
         }
 
+        private async void changeLanguage(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "hi-IN")
+            {
+
+                UpdateLang("hi-IN");
+
+                CultureInfo cultureInfo = new CultureInfo("hi-IN");
+                Thread.CurrentThread.CurrentCulture = cultureInfo;
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+
+                CultureInfo currentCulture = CultureInfo.CurrentCulture;
+                string language = currentCulture.TwoLetterISOLanguageName;
+
+                MessageBox.Show(language);
+
+
+
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
+            }
+            else if (comboBox1.SelectedItem.ToString() == "en-GB")
+            {
+                UpdateLang("en-GB");
+                Application.Exit();
+                this.Close();
+                Application.Restart();  
+             
+            }
+            else if (comboBox1.SelectedItem.ToString() == "es-ES")
+            {
+               
+                UpdateLang("es-ES");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
+            }
+            else if (comboBox1.SelectedItem.ToString() == "fr-FR")
+            { 
+            
+                UpdateLang("fr-FR");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+
+            }
+            else if (comboBox1.SelectedItem.ToString() == "ar-SA")
+            {
+               
+                UpdateLang("ar-SA");
+                Application.Exit();
+                this.Close();
+                Application.Restart();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "mr-IN")
+            {
+
+                UpdateLang("mr-IN");
+                this.Close();
+                Application.Exit();
+                
+                Application.Restart();
+            }
+
+
+        }
+
         protected override void OnSizeChanged(EventArgs e)
         {
             
@@ -244,25 +256,11 @@ namespace WebView2_Project_4
             }
         }
 
-        private void CoreWebView2_WebResourceRequested(object sender, CoreWebView2WebResourceRequestedEventArgs e)
-        {
-            string selectedLanguage = Lang.currentlang;
-            selectedLanguage = "hi-IN";
-            MessageBox.Show("hii");
-
-            var requestHeaders = e.Request.Headers;
-            requestHeaders.SetHeader("Accept-Language", selectedLanguage);
-
-            // Optionally, you can print the modified headers for debugging
-            Console.WriteLine($"New Accept-Language Header: {selectedLanguage}");
-        }
-
         private void CoreWebView2_NewWindowRequested(object sender,CoreWebView2NewWindowRequestedEventArgs e)
         {
             
             e.Handled = true;
         }
-
 
         private async void webViewNavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
