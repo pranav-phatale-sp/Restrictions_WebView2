@@ -1,5 +1,0 @@
-2025/02/17-12:26:57.469 3038 Reusing MANIFEST C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\WebStorage\6\IndexedDB\indexeddb.leveldb/MANIFEST-000001
-2025/02/17-12:26:57.475 3038 Recovering log #4
-2025/02/17-12:26:57.477 3038 Reusing old log C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\WebStorage\6\IndexedDB\indexeddb.leveldb/000004.log 
-2025/02/17-12:26:57.489 5430 Manual compaction at level-0 from '\x00\x11\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/02/17-12:26:58.135 5430 Manual compaction at level-0 from '\x00\x12\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at (end)

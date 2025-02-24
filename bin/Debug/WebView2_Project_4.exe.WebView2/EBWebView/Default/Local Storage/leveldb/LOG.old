@@ -1,9 +1,0 @@
-2025/02/24-14:46:14.614 2580 Reusing MANIFEST C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2025/02/24-14:46:14.626 2580 Recovering log #428
-2025/02/24-14:46:14.627 2580 Level-0 table #431: started
-2025/02/24-14:46:14.657 2580 Level-0 table #431: 27908 bytes OK
-2025/02/24-14:46:14.660 2580 Recovering log #430
-2025/02/24-14:46:14.670 2580 Reusing old log C:\Users\pranav.phatale\source\repos\WebView2_Project_4\bin\Debug\WebView2_Project_4.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000430.log 
-2025/02/24-14:46:14.672 2580 Delete type=0 #428
-2025/02/24-14:46:27.322 a4cc Level-0 table #433: started
-2025/02/24-14:46:27.337 a4cc Level-0 table #433: 27943 bytes OK
